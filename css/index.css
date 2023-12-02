@@ -1,0 +1,12 @@
+.canvas {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+.header {
+  align-self: center;
+  font-family: 'Caveat', cursive;
+  font-size: 48px;
+  white-space: break-spaces;
+}
