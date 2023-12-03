@@ -4,9 +4,32 @@
   justify-content: center;
 }
 
-.header {
-  align-self: center;
-  font-family: 'Caveat', cursive;
-  font-size: 48px;
-  white-space: break-spaces;
+.book {
+  padding: 20px 40px;
+  max-width: 600px;
+}
+
+.chapter {
+  /* border: 1px solid; */
+  flex-direction: column;
+}
+
+.chapter-page {
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.bookmarks {
+  margin-left: 10px;
+}
+
+.chapter-bookmark {
+  border: 1px solid red;
+  border-radius: 5px 5px 0 0;
+  padding: 5px;
+}
+
+.fbx {
+  display: flex;
 }
