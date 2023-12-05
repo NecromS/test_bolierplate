@@ -20,9 +20,9 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/index.css">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&family=Comfortaa:wght@500&family=Poiret+One&display=swap" rel="stylesheet">
 
   <meta name="theme-color" content="#fafafa">
 </head>
@@ -31,7 +31,9 @@
 
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/scrollObserver.js" type="module"></script>
+  <script src="js/sectionController.js" type="module"></script>
+  <script src="js/main.js" type="module"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
@@ -40,25 +42,25 @@
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async></script>
 
-  <div id="canvas" class="fbx">
+  <div id="canvas" class="heading">
+
+    <nav id="nav">
+      <a href="#">.</a>
+      <a href="#" data-points="1000">БИО</a>
+      <a href="#" data-points="2000">Хобби</a>
+      <a href="#" data-points="3000">Соцсети</a>
+      <a href="#">.</a>
+    </nav>
 
     <div id="book">
       <h1 id="book-title">51% IT / 49% Music</h1>
-      <div class="chapter fbx">
-        <div class="bookmarks fbx">
-          <div class="chapter-bookmark fbx">Филиппов Сергей</div>
-        </div>
-        <div class="chapter-page fbx">
-          Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.
-        </div>
-      </div>
-      <div id="delta"></div>
     </div>
+
 
     <footer>
       <img id="footer-logo" src="img/NecromS-watermark.png">
       Copyright © 2023. Все права защищены - сделано&nbsp;
-      <a href="https://github.com/necroms">NecromS</a>
+      <a href="https://github.com/necroms" target="_blank">NecromS</a>
     </footer>
 
     <div class="bg-avatar"></div>

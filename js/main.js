@@ -1,28 +1,31 @@
+import ScrollObserver from './scrollObserver.js';
+import SectionController from './sectionController.js';
+
 window.onload = function() {
 
-  const elem = document.getElementById('canvas');
+  const _canvas = document.getElementById('canvas');
+  const navigation = document.getElementById('nav');
 
-  if ('onwheel' in document) {
-    // IE9+, FF17+, Ch31+
-    elem.addEventListener("wheel", onWheel);
-  } else if ('onmousewheel' in document) {
-    // устаревший вариант события
-    elem.addEventListener("mousewheel", onWheel);
-  } else {
-    // Firefox < 17
-    elem.addEventListener("MozMousePixelScroll", onWheel);
-  }
+  const scrollObserver = new ScrollObserver(_canvas);
+  const sectionController = new SectionController({
+    navigation
+  });
 
-  function onWheel(_event) {
-    _event = _event || window.event;
+  scrollObserver.onChange((points) => {
+    sectionController.setSectionByPoints(points);
+  });
 
-    // wheelDelta не даёт возможность узнать количество пикселей
-    const delta = _event.deltaY || _event.detail || _event.wheelDelta;
-    const info = document.getElementById('delta');
-
-    info.innerHTML = +info.innerHTML + delta;
-    // _event.preventDefault ? _event.preventDefault() : (_event.returnValue = false);
-  }
+  navigation.addEventListener('click', (event) => {
+    event.stopPropagation();
+    const { target } = event;
+    if (_canvas.classList.contains('heading')) {
+      _canvas.classList.remove('heading');
+      scrollObserver.activate();
+    }
+    if (target.tagName === 'A') {
+      const points = target.getAttribute('data-points');
+      scrollObserver.points = points;
+    }
+  });
 
 }
-
