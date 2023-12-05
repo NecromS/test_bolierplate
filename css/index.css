@@ -8,12 +8,15 @@
   --color-border-block: #232323;
 
   --footer-height: 60px;
+  --text-size-default: 1.2em;
 }
 
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Comfortaa', sans-serif;
+  font-family: 'Alumni Sans Pinstripe', sans-serif;
+  font-size: var(--text-size-default);
+
   color: var(--color-default);
 }
 
@@ -34,15 +37,12 @@ h1 {
 a {
   color: var(--color-link);
   text-decoration: none;
+  transition: color 0.3s;
 }
 
 a:hover {
   color: var(--color-link-hover);
-  text-decoration: underline;
-}
-
-.fbx {
-  display: flex;
+  /*text-decoration: underline;*/
 }
 
 #video-layer {
@@ -65,6 +65,20 @@ a:hover {
   min-height: 100%;
 }
 
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  bottom: 50%;
+  z-index: 3;
+  text-transform: uppercase;
+  transition: left 0.5s,
+              bottom 0.5s,
+              font-size 0.5s;
+}
+
 footer {
   background: #00000078;
   width: 100%;
@@ -72,6 +86,7 @@ footer {
   position: fixed;
   bottom: 0;
   z-index: 1;
+  transition: opacity 0.2s;
 
   display: flex;
   justify-content: center;
@@ -83,6 +98,7 @@ footer {
 }
 
 #canvas {
+  display: flex;
   height: 100vh;
   justify-content: center;
   background: rgb(0, 0, 0);
@@ -110,46 +126,40 @@ footer {
   margin: 0 30px;
   height: calc(100% - var(--footer-height));
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 #book-title {
   font-size: 3em;
 }
 
-.chapter {
-  /* border: 1px solid; */
-  flex-direction: column;
+.heading #book-title,
+.heading footer,
+.heading .bg-avatar {
+  /*display: none;*/
+  opacity: 0;
 }
 
-.chapter-page {
-  border: 8px solid var(--color-border-block);
-  border-radius: 27px;
-  padding: 16px;
-  background: #393733d6;
-  font-size: 20px;
-  color: #b99a3c;
-  /*color: #b99a3c;*/
+.heading #book {
+  justify-content: center;
 }
 
-.bookmarks {
-  margin-left: 25px;
-  height: 70px;
+.heading nav {
+  position: fixed;
+  bottom: 43%;
+  left: 43%;
+  font-size: 2em;
+  text-decoration: none;
 }
 
-.chapter-bookmark {
-  border-radius: 20px 20px 0 0;
-  padding: 10px;
-  border: 5px solid var(--color-border-block);
-  background: rgba(47, 55, 61, 0.95);
-  font-size: 20px;
-  font-weight: bold;
-  height: 25px;
-  align-self: flex-end;
-  transition: height 0.2s, background 0.2s;
+nav a {
+  padding: 0 15px;
+  width: 100%;
+  text-align: center;
+  transition: background 0.7s;
 }
 
-.chapter-bookmark:hover {
-  height: 40px;
-  cursor: pointer;
-  background: var(--color-secondary);
+nav a.active {
+  background: #00000094;
 }
