@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/message-bubbles.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,6 +34,8 @@
   <script src="js/plugins.js"></script>
   <script src="js/scrollObserver.js" type="module"></script>
   <script src="js/sectionController.js" type="module"></script>
+  <script src="js/imessage.js" type="module"></script>
+  <script src="js/tips.js" type="module"></script>
   <script src="js/main.js" type="module"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
@@ -45,15 +48,22 @@
   <div id="canvas" class="heading">
 
     <nav id="nav">
-      <a href="#">.</a>
       <a href="#" data-points="1000">БИО</a>
-      <a href="#" data-points="2000">Хобби</a>
-      <a href="#" data-points="3000">Соцсети</a>
-      <a href="#">.</a>
+      <a href="#" data-points="1500">Хобби</a>
+      <a href="#" data-points="2000">Соцсети</a>
     </nav>
 
     <div id="book">
       <h1 id="book-title">51% IT / 49% Music</h1>
+      <div class="section" data-section="1">
+        Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.
+      </div>
+      <div class="section" data-section="2">
+        Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь. Если вам нужен Lorem Ipsum для серьёзного проекта, вы наверняка не хотите какой-нибудь шутки, скрытой в середине абзаца. Также все другие известные генераторы Lorem Ipsum используют один и тот же текст, который они просто повторяют, пока не достигнут нужный объём. Это делает предлагаемый здесь генератор единственным настоящим Lorem Ipsum генератором. Он использует словарь из более чем 200 латинских слов, а также набор моделей предложений. В результате сгенерированный Lorem Ipsum выглядит правдоподобно, не имеет повторяющихся абзацей или "невозможных" слов.
+      </div>
+      <div class="section" data-section="3">
+        Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum, "consectetur", и занялся его поисками в классической латинской литературе. В результате он нашёл неоспоримый первоисточник Lorem Ipsum в разделах 1.10.32 и 1.10.33 книги "de Finibus Bonorum et Malorum" ("О пределах добра и зла"), написанной Цицероном в 45 году н.э. Этот трактат по теории этики был очень популярен в эпоху Возрождения. Первая строка Lorem Ipsum, "Lorem ipsum dolor sit amet..", происходит от одной из строк в разделе 1.10.32
+      </div>
     </div>
 
 
@@ -63,7 +73,9 @@
       <a href="https://github.com/necroms" target="_blank">NecromS</a>
     </footer>
 
-    <div class="bg-avatar"></div>
+    <div id="bg-avatar">
+      <div id="imessage"></div>
+    </div>
 
     <div id="video-layer">
       <div id="video-color"></div>

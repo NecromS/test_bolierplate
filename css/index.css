@@ -6,6 +6,7 @@
   --color-link-hover: goldenrod;
   /*--color-border-block: #232323;*/
   --color-border-block: #232323;
+  --color-nav: darkgoldenrod;
 
   --footer-height: 60px;
   --text-size-default: 1.2em;
@@ -24,7 +25,7 @@ body {
   overflow: hidden;
 }
 
-h1 {
+h1, h2, h3 {
   margin: 0;
   padding: 0;
 }
@@ -77,7 +78,34 @@ nav {
   transition: left 0.5s,
               bottom 0.5s,
               font-size 0.5s;
+  @media (max-width: 1100px) {
+    top: 0;
+    bottom: unset;
+  }
 }
+
+nav::before, nav::after {
+  content: '.';
+  color: var(--color-nav);
+}
+
+nav a {
+  padding: 0 15px;
+  width: 100%;
+  text-align: center;
+  transition: background 0.7s;
+  @media (max-width: 1100px) {
+    display: none;
+  }
+}
+
+nav .nav-active {
+  background: #00000094;
+  @media (max-width: 1100px) {
+    display: inline-block;
+  }
+}
+
 
 footer {
   background: #00000078;
@@ -91,6 +119,9 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 1200px) {
+    display: none;
+  }
 }
 
 #footer-logo {
@@ -102,25 +133,26 @@ footer {
   height: 100vh;
   justify-content: center;
   background: rgb(0, 0, 0);
-  background: linear-gradient(165deg, rgba(0, 0, 0, 1) 0%, rgba(23, 23, 23, 1) 67%, rgba(59, 59, 59, 1) 140%);
+  background: linear-gradient(165deg, rgba(0, 0, 0, 1) 0%, rgb(8 8 8) 67%, rgb(91 53 19) 140%);
 }
 
-.bg-avatar {
+#bg-avatar {
   background: url("../img/bg-fullavatar.png");
-  width: 400px;
-  height: 660px;
+  width: 270px;
+  height: 450px;
   position: absolute;
   bottom: 0;
   right: 0;
   z-index: 1;
-  @media (max-width: 1400px) {
+  background-size: 270px;
+  @media (max-width: 1200px) {
     display: none;
   }
 }
 
 #book {
   padding: 20px 0;
-  min-width: 600px;
+  min-width: 500px;
   max-width: 840px;
   z-index: 2;
   margin: 0 30px;
@@ -134,9 +166,17 @@ footer {
   font-size: 3em;
 }
 
+.section {
+  display: none;
+}
+
+.section-active {
+  display: block;
+}
+
 .heading #book-title,
 .heading footer,
-.heading .bg-avatar {
+.heading #bg-avatar {
   /*display: none;*/
   opacity: 0;
 }
@@ -153,13 +193,9 @@ footer {
   text-decoration: none;
 }
 
-nav a {
-  padding: 0 15px;
-  width: 100%;
-  text-align: center;
-  transition: background 0.7s;
+.heading nav a {
+  @media (max-width: 1100px) {
+    display: inline-block;
+  }
 }
 
-nav a.active {
-  background: #00000094;
-}
